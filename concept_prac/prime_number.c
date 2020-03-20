@@ -8,10 +8,11 @@ int main()
     scanf("%ld", &a);
     for(int count = 2 ; count <a; count+=1)
     {
-        if (a%count == 0)
+        if (a % count == 0)
         {
-            printf("可以被%d整除\n", count);
-            count_a +=1;     
+            printf("可以被%d整除\n", count);  //这样和下面的break可以加快循环退出的速度，即发现非素数就break出去
+            count_a +=1;
+            //break;     
         }
         else
         {
