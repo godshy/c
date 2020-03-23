@@ -30,7 +30,7 @@ int main()
         printf("不是闰年\n");
         for (int i =0; i< 11; i++)
         {
-            printf("%d月份: %d\n", c[i], b[i]);
+            printf("%4d月份: %d\n", c[i], b[i]);
         }
         return 0;              
 
@@ -52,7 +52,7 @@ int main()
         printf("不是闰年\n");
         for (int i =0; i<11 ; i++)
         {
-            printf("%d月份: %d\n", c[i], b[i]);
+            printf("%4d月份: %d天\n", c[i], b[i]);
         }
         return 0;   
         
@@ -62,14 +62,14 @@ int main()
 print1:
     for ( i = 0; i < 12 ; i++)
     {
-        printf("%d月份:  %d\n", *(c+i), a[i]);
+        printf("%4d月份:  %d天\n", *(c+i), a[i]);
 
     }
     return 0;
 print2:
     for ( i = 0; i < 12 ; i++)
     {
-        printf("%d月份:  %d\n", *(c+i), a[i]);
+        printf("%4d月份:  %d天\n", *(c+i), a[i]);
 
     }
     return 0;
