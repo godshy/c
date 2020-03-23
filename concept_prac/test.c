@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 int main()
 {
     int a = 6;
@@ -6,4 +6,18 @@ int main()
     int c;
     c = a%b;
     printf("%d", c);
+} */
+
+#include <stdio.h>
+
+int main()
+{
+        int a = 110;
+        int *b = &a;
+
+        *b = *b - 10;
+
+        printf("a = %d\n", a);
+
+        return 0;
 }
