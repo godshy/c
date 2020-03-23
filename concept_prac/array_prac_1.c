@@ -14,7 +14,7 @@ int main()
     //printf("%d", (*p) % 2020);
     if (year - 2020 >= 0)
     {
-        for (int n = 0; n < ( year/4 ); n++)
+        for (int n = 0; (year - 4*n) >= 2020; n++)
         {
             if (year - 4*n == 2020)
             {
@@ -37,7 +37,7 @@ int main()
     }
     else
     {
-        for (int n = 0; n < 5; n ++) 
+        for (int n = 0; (year + 4*n) <= 2020; n ++) 
         {
             if ( 2020 - n * 4 == year)
             {
