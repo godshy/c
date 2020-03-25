@@ -1,0 +1,28 @@
+/*顺序表的插入
+1.插入位置不合理，抛出异常
+2.如果线性表长度大于等于数组长度，抛出异常或动态增加数组容量
+3.从最后一个元素开始向前遍历到第i个位置，分别将他们都向后移动一个位置
+4.将要插入的元素填入位置i处
+5.线性表长+1
+*/
+status List(SqList *L, int i, ElemType e)
+{
+    int k;
+    if (L->length == MAXSIZE)
+    {
+        return ERROR;
+    }
+    if ( i<1 || i>L->length+1)
+    {
+        return ERROR;
+    }
+    if ( i <= L->length) //不在表尾
+    {
+        for (k=L->length-1; k >= i-1; k--) //i之后所有元素往后挪位置
+        {
+            L->data[K+1] = L->data[k];
+        }
+    }
+    L->data[i-1] = e;
+    L->length++;
+}

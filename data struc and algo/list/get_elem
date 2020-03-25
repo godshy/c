@@ -1,0 +1,16 @@
+//查找元素
+#define OK 1
+#define ERROR 0
+#define TRUE 1
+#define FALSE 0
+typedef int Status;
+
+Status GetElem(SqList L, int i, ElemType *e) //这段伪代码表示函数输入三个值，线性表，索引位置，数据的地址传入指针
+{
+    if (L.length == 0 || i<1 || i >L.length) //i小于线性表的长度或大于长度或等于0 
+    {
+        return ERROR;
+    }
+    *e = L.data[i-1]; //下标放到指针变量，例如数组名本身就是地址
+    return OK;
+}
