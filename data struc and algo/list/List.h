@@ -20,6 +20,6 @@ Position Advance( Position P);
 int Retrieve( Position P);
 
 
-
-
 #endif
+
+
