@@ -1,4 +1,4 @@
-//这个程序实现了静态线性表的插入，删除操作
+//这个程序实现了静态线性表的插入，删除,查找，展示操作
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -44,6 +44,26 @@ int insert(list *LIS_NAME,int *i, int  *j)
         LIS_NAME->data[temp + 1] =  LIS_NAME->data[temp];
     }
     LIS_NAME->data[*j-1] = *i; 
+    LIS_NAME->length +=1;
+}
+//删除操作，所有元素往前移一位
+int delete(list *list_name, int i)
+{
+    if (i < 1 || i > list_name->length )
+    {
+        printf("你删你ma呢？\n");
+        return ERROR;
+    }
+    else if (i-1 == list_name->length)
+    {
+        list_name->data[i-1]= 0;
+    }
+    for (int temp = i; temp < list_name->length; temp++) //注意这里的循环范围，永远要考虑到给用户看的得从1开始
+    {
+        list_name->data[temp - 1] = list_name->data[temp];     
+    }
+    list_name->length -=1;                //在程序里列表的增长减少不要忘记
+
 }
 
 int main()
@@ -80,24 +100,36 @@ level_1:
         printf("请输入想要插入的元素和位置:\n");      //注意所有的跨函数数据操作都要用指针传递
         scanf("%d %d", &i, &j);
         insert(&list_a, &i, &j);
+        printf("\n\n\n");
         goto level_1;         
     }
+    else if ( choose == 3)
+    {
+        
+        printf("请输入想要删除的元素及其位置\n");
+        int del_a, del_b;
+        scanf("%d%d", &del_a, &del_b);
+        delete(&list_a, del_b);
+        printf("\n\n\n");
+        goto level_1;
+
+    }
+    
     else if ( choose == 4)
     {
         for (int i = 0; i < list_a.length; i ++)
         {
             printf("第%d位是%d\n", i+1, list_a.data[i]);
-        }  
+        }
+        printf("\n操作完成\n\n\n");
         goto level_1;      
     }
     
-    
-
-
-    //char c;
-    //while(1 && (c=getchar()!='-'))
-    /*{*/
-    
+    else
+    {
+        printf("就4个数还输错，吃屎去吧\n");
+        return ERROR;    
+    }
     
     return 0;
 }
