@@ -115,8 +115,8 @@ int is_last(l_list_node *list_Node)       //判断是不是最后一位的操作
 
 int if_empty(l_list_node *list_Node)      //判断是否为空  暂时用不到
 {
-    int *list_length = get_length(list_Node);
-    if (*list_length < 1)
+    int list_length = get_length(list_Node);
+    if (list_length < 1)
     {
         printf("此表为空！\n");
         return EMPTY;
@@ -148,7 +148,6 @@ int get_elem_by_ID(l_list_node *list_Node, int i)
     l_list_node *N = list_Node;
     while (N != NULL)
     {
-        //printf("ID = %d, i = %d\n", N->ID, i);
         if (N->ID == i)
         {
             printf("找到了！\n");
@@ -166,10 +165,10 @@ int get_elem_by_ID(l_list_node *list_Node, int i)
 
 int get_elem_by_seq(l_list_node * list_Node, int i)  //待修改，暂时用不到
 {
-    int *list_length = get_length(list_Node);
+    int list_length = get_length(list_Node);
     int loop_control = 0;
     l_list_node * p;
-    for (; loop_control < *list_length; loop_control++)
+    for (; loop_control < list_length; loop_control++)
     {
         p = list_Node->next;
         if (i == list_Node->ID)
