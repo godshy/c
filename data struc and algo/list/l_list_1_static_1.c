@@ -1,4 +1,6 @@
 //这个程序实现了静态线性表的插入，删除,查找，展示操作
+//插入和删除最好的情况是O(1)，因为正好不用进入循环
+//最坏的情况是，如果第1为元素，那么整列要往后或者往前, 此时是O(n)
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -25,7 +27,10 @@ int get_elem(list  *NAME, int i, int *Locate_p)
         return ERROR;
     }
     * Locate_p = i - 1;
-    printf("你要找的元素值为%d, 位于第%d个\n", NAME->data[*Locate_p], i);
+    int  a = NAME->data[*Locate_p];
+    return(a);
+    //return(i);
+    //printf("你要找的元素值为%d, 位于第%d个\n", NAME->data[*Locate_p], i);
 
 }
 //插入操作，所有元素向后移一位
@@ -49,7 +54,7 @@ int insert(list *LIS_NAME,int *i, int  *j)
 //删除操作，所有元素往前移一位
 int delete(list *list_name, int i)
 {
-    if (i < 1 || i > list_name->length )
+    if (i < 1 || i > list_name->length || list_name->length == 0 )
     {
         printf("你删你ma呢？\n");
         return ERROR;
@@ -90,7 +95,9 @@ level_1:
     {
         printf("要查找哪个元素?\n");
         scanf("%d", &locate);
-        get_elem(&list_a, locate, &locater);
+        //get_elem(&list_a, locate, &locater);
+        int a = get_elem(&list_a, locate, &locater);
+        printf("你要搜索的元素是%d，位于第%d位", a, locate);
         getchar();
         goto level_1;
     }
