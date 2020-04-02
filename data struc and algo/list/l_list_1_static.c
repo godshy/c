@@ -3,7 +3,7 @@
 //这个程序描述了静态长度的线性表是如何创建并且查找元素的
 #define ERROR 0;
 #define OK 1;
-
+#define A 0;
 
 
 
