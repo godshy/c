@@ -19,18 +19,18 @@ int insert (c_li **c_list, int i)
     {
         return ERROR;
     }
-    c_li *head = (c_li *)malloc(sizeof(c_li));
-    head->next = head;
-    c_li *ass = head;
+    c_li *head = (c_li *)malloc(sizeof(c_li));  //分配一个头节点
+    head->next = head;                          //指向自己
+    c_li *ass = head;                              
     for ( int j = 1; j <= i; ++j)
     {
-        c_li *Node = (c_li *)malloc(sizeof(c_li));
-        Node->x = j;
-        Node->next = head;
-        ass->next = Node;
-        ass = Node;
+        c_li *Node = (c_li *)malloc(sizeof(c_li)); //分配数据节点
+        Node->x = j;                               
+        Node->next = head;                         //数据下一个节点指向头
+        ass->next = Node;                          //尾节点指向的next指向节点 尾插法
+        ass = Node;                                //尾节点变成node 
     }
-    ass->next = head->next;
+    ass->next = head->next;                       //最后把最后一个节点跳过头节点接到第一位，释放head，方便计算
     free(head);
     *c_list = ass->next;
     
