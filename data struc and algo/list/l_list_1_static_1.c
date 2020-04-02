@@ -35,9 +35,9 @@ int get_elem(list  *NAME, int i, int *Locate_p)
 }
 //插入操作，所有元素向后移一位
 
-int insert(list *LIS_NAME,int *i, int  *j)
+int insert(list *LIS_NAME,int *i, int  *j)              
 {
-    if (*j > LIS_NAME->length + 1 || *j < 1 || LIS_NAME->length == 50)
+    if (*j > LIS_NAME->length + 1 || *j < 1 || LIS_NAME->length == 50)  //后插法头在前
     {
         printf("出错了\n");
         return ERROR;
