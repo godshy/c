@@ -123,7 +123,7 @@ int if_empty(l_list_node *list_Node)      //判断是否为空  暂时用不到
     }
 }
 
-void insert_op( l_list_node *list_Node)    //插入操作
+void insert_op( l_list_node *list_Node)    //插入操作, deepthroat
 {
     l_list_node *temp, *n_Node;
     n_Node = (l_list_node *)malloc(sizeof(l_list_node));
