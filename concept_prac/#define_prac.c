@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 #define url "http://www.cisco.com" /*不需要分号，如果加了分号会把分号也替换进去*/
 #define NAME "Chuck Robbins"
 #define job "CEO"
