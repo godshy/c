@@ -1,9 +1,8 @@
 //双向循环链表
-//A-Z的字母表，用户输入+N(数字) 字母表全部往左移动，复数往右移动
+//A-Z的字母表，用户输入+N(数字) 字母表全部往左移动，负数往右移动
 //首先看下字母表怎么生成
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 
 typedef struct d_list
@@ -53,21 +52,56 @@ int print_op(d_list_p d_list)
     return 0;
 }
 
-clock_t start, stop;
-double duration;
+int mov_op(int i, d_list_p d_list)
+{
+    
+    if (i == 0)
+    {
+        printf("无操作，请再试一次");
+        return 0;
+    }
+    else if ( i < 0)
+    {
+        d_list_p cursor = d_list;
+        while( i < 0)   //字母表往右移动，Z->A->B->C....
+        {
+            cursor = cursor->previous;
+
+            i+=1;
+
+        }
+//        printf("%c", cursor->data);
+        print_op(cursor);
+    }
+    else
+    {
+        d_list_p cursor1 = d_list;
+
+        while ( i > 0)
+        {
+            cursor1 = cursor1->next;
+            i-=1;
+        }
+//       printf("%c", cursor1->data);
+        print_op(cursor1);
+        
+    }
+        
+}
+
 
 int main()
 {
-    start = clock();
+ 
     d_list_p n_list;
     create_list(&n_list);
-    stop = clock();
-    duration = ((double)(stop - start));
-    printf("%f", duration);
     print_op(n_list);
-    
-    
+    printf("请输入数字，要移动几位\n");
+    int i;
+    scanf("%d", &i);
+    mov_op(i, n_list);
 
+    return 0;
 
 
 }
