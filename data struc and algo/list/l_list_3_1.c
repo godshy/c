@@ -4,6 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define OK 0;
+#define ERROR 1;
+#define status int;
 
 typedef struct d_list
 {
@@ -17,8 +20,6 @@ int create_list(d_list_p *l_pointer)  //注意**指针的含义：函数调用�
 //相当于d_list_p ** NAME
 {
     d_list_p node_head, cursor;
-
-
     node_head = (dual_list *)malloc(sizeof(dual_list));
     char c = 'A';
     node_head->data = c;
@@ -36,6 +37,7 @@ int create_list(d_list_p *l_pointer)  //注意**指针的含义：函数调用�
         cursor = New_node;
     }
     *l_pointer = node_head;
+    return OK;
 
 }
 
@@ -66,7 +68,6 @@ int mov_op(int i, d_list_p d_list)
         while( i < 0)   //字母表往右移动，Z->A->B->C....
         {
             cursor = cursor->previous;
-
             i+=1;
 
         }

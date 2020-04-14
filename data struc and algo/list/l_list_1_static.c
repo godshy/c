@@ -21,7 +21,7 @@ int init_list(struct l_list *poi)  //表示struct l_list变量的指针,为啥�
     poi->data[100] = (0);
 }
 
-int get_elem(list_create *L, int i, int * Locater_P) //这个函数用来查找链表中的元素输入下标返回值
+int *get_elem(list_create *L, int i, int * Locater_P) //这个函数用来查找链表中的元素输入下标返回值
 {
     if ( i == 0 || i > L->length || L->length ==0)   //返回异常，防止用户搞事情
     {
@@ -29,8 +29,11 @@ int get_elem(list_create *L, int i, int * Locater_P) //这个函数用来查找�
         return ERROR;
     }
     * Locater_P = L->data[i - 1];          //用户是不懂线性表的初始值是1的，所以它只会输入1，和实际对应要减一
-      printf("你查找的值是%d", *Locater_P);
+      printf("你查找的值是%d\n", *Locater_P);
+      return Locater_P;
 }                                         //指针还是因为这是函数，赋值是隔离的。
+
+
 
 int main()
 {
@@ -50,10 +53,8 @@ int main()
     printf("查找第几个元素:\n");
     int i, p;
     scanf("%d", &i);
-    get_elem(&s_list_1, i, &p);
-    
-    
-    return 0;
+    get_elem(&s_list_1, i, &p);   
+
 
 
 }
