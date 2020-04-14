@@ -27,7 +27,8 @@ typedef struct Node
 //typedef l_list *ling_list_pointer;
 //创建了一个l_list类型的指针，
 
-int init_op(l_list_node **list_Node )       //初始化表,因为没有typedef，存放的是l_list类型指针的指针。即为了修改
+int init_op(l_list_node **list_Node )       //初始化表,因为没有typedef，
+//存放的是l_list类型指针的指针。即为了修改
 //指向链表表头的指针，必须&获取其位置，再前名再加一个*
 {
     *list_Node = (l_list_node *)malloc(sizeof(l_list_node));  //malloc一个node大小的内存单元，完事了记得free()
