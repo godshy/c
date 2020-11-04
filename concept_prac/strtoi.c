@@ -19,12 +19,9 @@ int strtoi_replace(const char *ptr)
             i++;
         }
         
-     
-
     }
 
 }
-
 int main()
 {
     char *stringx, *stopstring;

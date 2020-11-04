@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include<stdio.h>
+
 int main()
 {
       printf("test as if this fucking environment works\n");

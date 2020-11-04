@@ -1,10 +1,10 @@
-   #include<iostream>
-    #include<cstdio>
-    using namespace std;
-    #define N 5
-    int a[N];//有序数组
-    int main ( ) {
-    	int i, k, x;
+#include<iostream>
+#include<cstdio>
+using namespace std;
+#define N 5
+int a[N];//有序数组
+int main ( ) {
+int i, k, x;
     	printf("Please input %d numbers:\n",N);   
     	for (i=0; i<N; i++) {
     		scanf ("%d", &x);

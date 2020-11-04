@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 #define INF 255
 #define MAXN 16
 
