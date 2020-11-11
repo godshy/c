@@ -13,7 +13,7 @@ typedef struct d_list
     char data;
     struct d_list *previous;
     struct d_list *next;
-} dual_list, *d_list_p;
+} dual_list, *d_list_p; //只是创建了两个别名，使用typedef
 
 
 int create_list(d_list_p *l_pointer)  //注意**指针的含义：函数调用指针的地址，将其修改成node_head的地址。
