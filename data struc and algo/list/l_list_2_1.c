@@ -238,7 +238,7 @@ int main()
             scanf("%d", &x);
             get_elem_by_ID(js_info, x);
                  
-        }
+        }      
         else if (choice == 3)    //增加数据
         {
             printf("请输入技师数据\n");
@@ -255,7 +255,6 @@ int main()
                 }                                  
             }  
         }
-
         else if (choice == 4)    //删除数据
         {
             printf("请输入js的ID！\n");
@@ -263,25 +262,21 @@ int main()
             scanf("%d", &I);
             del_op(js_info, I);
         }
-
         else if (choice == 0)
         {
             break;
         }
-
         else if (choice ==5)
         {
             print_menu();
         }
-        
+
         else
         {
             printf("请输入正确的操作符！\n");
         }   
 
-
     }
-
     return 0;
 
 }
